@@ -211,6 +211,7 @@ async def start_command(client: Bot, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup(
             [
+                [InlineKeybordButton("Main Channel",url"t.me/outlawbots")],
                 [
                     InlineKeyboardButton("😊 About Me", callback_data = "about"),
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
