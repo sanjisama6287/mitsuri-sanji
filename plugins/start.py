@@ -211,8 +211,8 @@ async def start_command(client: Bot, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Main Channel", url="t.me/anime_raven"),
-                 InlineKeyboardButton("Source Code", url="t.me/+S6jna9Xe3-UyODhl")
+                [InlineKeyboardButton("Main Channel", url="t.me/anime_raven")
+               
                 ],
                 [
                     InlineKeyboardButton("😊 About Me", callback_data = "about"),
