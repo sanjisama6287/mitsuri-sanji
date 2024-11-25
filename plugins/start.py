@@ -54,7 +54,7 @@ async def start_command(client: Bot, message: Message):
                     reply_to_message_id=message.id,
                 )
                 return
-            if int(ad_msg.split(":")[1]) > int(get_current_time() + 72000):
+            if int(ad_msg.split(":")[1]) > int(get_current_time() + 18000):
                 await client.send_message(
                     message.chat.id,
                     "Dont Try To Be Over Smart",
@@ -67,7 +67,7 @@ async def start_command(client: Bot, message: Message):
             )
             await client.send_message(
                 message.chat.id,
-                "Congratulations! Ads token refreshed successfully! \n\nIt will expire after 24 Hour",
+                "Congratulations! Ads token refreshed successfully! \n\nIt will expire after 5 Hour",
                 reply_to_message_id=message.id,
             )
             return
@@ -86,11 +86,11 @@ async def start_command(client: Bot, message: Message):
         result = collection.find_one({"user_id": uid})
         if result is None:
             temp_msg = await message.reply("Please wait...")
-            ad_code = str_to_b64(f"{uid}:{str(get_current_time() + 72000)}")
+            ad_code = str_to_b64(f"{uid}:{str(get_current_time() + 18000)}")
             ad_url = shorten_url(f"https://telegram.dog/{client.username}?start=token_{ad_code}")
             await client.send_message(
                 message.chat.id,
-                f"Hey🤴 <b>{message.from_user.mention}</b> \n\nYour Ads token is expired, refresh your token and try again. \n\n<b>Token Timeout:</b> 24 hour \n\n<b><blockquote>What is token?</b> \nThis is an ads token. If you pass 1 ad, you can use the bot for 24 hour after passing the ad.</blockquote>\n\n<b>APPLE/IPHONE USERS COPY TOKEN LINK AND OPEN IN CHROME BROWSER</b>",
+                f"Hey🤴 <b>{message.from_user.mention}</b> \n\nYour Ads token is expired, refresh your token and try again. \n\n<b>Token Timeout:</b> 5 hour \n\n<b><blockquote>What is token?</b> \nThis is an ads token. If you pass 1 ad, you can use the bot for 5 hour after passing the ad.</blockquote>\n\n<b>APPLE/IPHONE USERS COPY TOKEN LINK AND OPEN IN CHROME BROWSER</b>",
                 disable_web_page_preview = True,
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -119,11 +119,11 @@ async def start_command(client: Bot, message: Message):
             return
         elif int(result["time_out"]) < get_current_time():
             temp_msg = await message.reply("Please wait...")
-            ad_code = str_to_b64(f"{uid}:{str(get_current_time() + 72000)}")
+            ad_code = str_to_b64(f"{uid}:{str(get_current_time() + 18000)}")
             ad_url = shorten_url(f"https://telegram.dog/{client.username}?start=token_{ad_code}")
             await client.send_message(
                 message.chat.id,
-                f"Hey <b>{message.from_user.mention}</b> \n\nYour Ads token is expired, refresh your token and try again. \n\n<b>Token Timeout:</b> 24 hour \n\n<b><blockquote>What is token?</b> \nThis is an ads token. If you pass 1 ad, you can use the bot for 24 hour after passing the ad.</blockquote>",
+                f"Hey <b>{message.from_user.mention}</b> \n\nYour Ads token is expired, refresh your token and try again. \n\n<b>Token Timeout:</b> 5 hour \n\n<b><blockquote>What is token?</b> \nThis is an ads token. If you pass 1 ad, you can use the bot for 5 hour after passing the ad.</blockquote>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -211,7 +211,9 @@ async def start_command(client: Bot, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Main Channel", url="t.me/anime_raven")],
+                [InlineKeyboardButton("Main Channel", url="t.me/anime_raven"),
+                 InlineKeyboardButton("Source Code", url="t.me/https://t.me/+S6jna9Xe3-UyODhl")
+                ],
                 [
                     InlineKeyboardButton("😊 About Me", callback_data = "about"),
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
