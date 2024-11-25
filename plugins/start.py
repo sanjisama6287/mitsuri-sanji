@@ -90,7 +90,7 @@ async def start_command(client: Bot, message: Message):
             ad_url = shorten_url(f"https://telegram.dog/{client.username}?start=token_{ad_code}")
             await client.send_message(
                 message.chat.id,
-                f"Hey🤴 <b>{message.from_user.mention}</b> \n\nYour Ads token is expired, refresh your token and try again. \n\n<b>Token Timeout:</b> 24 hour \n\n<b>What is token?</b> \nThis is an ads token. If you pass 1 ad, you can use the bot for 24 hour after passing the ad.\n\n<b>APPLE/IPHONE USERS COPY TOKEN LINK AND OPEN IN CHROME BROWSER</b>",
+                f"Hey🤴 <b>{message.from_user.mention}</b> \n\nYour Ads token is expired, refresh your token and try again. \n\n<b>Token Timeout:</b> 24 hour \n\n<b><blockquote>What is token?</b> \nThis is an ads token. If you pass 1 ad, you can use the bot for 24 hour after passing the ad.</blockquote>\n\n<b>APPLE/IPHONE USERS COPY TOKEN LINK AND OPEN IN CHROME BROWSER</b>",
                 disable_web_page_preview = True,
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -101,7 +101,7 @@ async def start_command(client: Bot, message: Message):
                             )
                         ],[
                             InlineKeyboardButton(
-                                "How To Open Links? ", url='https://t.me/OpenLinksTutorial/3'                                                         
+                                "How To Open Links? ", url='https://t.me/+_k4l-w75IrBiMzdl'                                                         
                                 
                             )
                             
@@ -123,7 +123,7 @@ async def start_command(client: Bot, message: Message):
             ad_url = shorten_url(f"https://telegram.dog/{client.username}?start=token_{ad_code}")
             await client.send_message(
                 message.chat.id,
-                f"Hey <b>{message.from_user.mention}</b> \n\nYour Ads token is expired, refresh your token and try again. \n\n<b>Token Timeout:</b> 24 hour \n\n<b>What is token?</b> \nThis is an ads token. If you pass 1 ad, you can use the bot for 24 hour after passing the ad.",
+                f"Hey <b>{message.from_user.mention}</b> \n\nYour Ads token is expired, refresh your token and try again. \n\n<b>Token Timeout:</b> 24 hour \n\n<b><blockquote>What is token?</b> \nThis is an ads token. If you pass 1 ad, you can use the bot for 24 hour after passing the ad.</blockquote>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -133,7 +133,7 @@ async def start_command(client: Bot, message: Message):
                             )
                         ],[
                             InlineKeyboardButton(
-                                "How To Open Links? ", url='https://t.me/OpenLinksTutorial/3'                                                         
+                                "How To Open Links? ", url='https://t.me/+_k4l-w75IrBiMzdl'                                                         
                                 
                             )
                             
@@ -211,7 +211,7 @@ async def start_command(client: Bot, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup(
             [
-                [InlineKeybordButton("Main Channel",url"t.me/outlawbots")],
+                [InlineKeybordButton("Main Channel",url="t.me/anime_raven")],
                 [
                     InlineKeyboardButton("😊 About Me", callback_data = "about"),
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
@@ -246,11 +246,16 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = [
-        [
+        [InlineKeyboardButton(
+                "Join Channel",
+                url = "https://t.me/+9zWHreWb5aZhOTQ1"),
             InlineKeyboardButton(
                 "Join Channel",
                 url = client.invitelink)
-        ]
+        ],[
+        InlineKeyboardButton(
+                "Join Channel",
+                url ="https://t.me/+MZi3cZma-clhM2Zl")]
     ]
     try:
         buttons.append(
