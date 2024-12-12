@@ -6,7 +6,7 @@ from config import *
 from pyrogram import enums
 from pyrogram.types import Message, InputMediaPhoto, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
-message_content = '''👋 Hey {mention}\n
+message_content = '''👋 Hey {first}\n
 🎖️ Available Plans :\n
 ● 149 rs For 1 Month Prime Membership\n
 ● 399 rs For 3 Months Prime Membership\n
